@@ -1,5 +1,6 @@
 package com.libraryManagement.controller;
 
+import com.libraryManagement.dto.ViewStudentDto;
 import com.libraryManagement.entity.Student;
 import com.libraryManagement.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,7 @@ public class StudentController {
     public Student updateStudent(@RequestBody Student student, int id){
         return this.studentService.updateStudentById(student,id);
     }
+
+
 
 }

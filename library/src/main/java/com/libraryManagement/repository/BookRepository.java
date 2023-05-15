@@ -11,5 +11,10 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book ,Integer> {
 
 
-    List<Book> findByStatus(BookStatus bookStatus);
+   /* List<Book> findByStatus(BookStatus bookStatus);
+
+*/
+
+    Book findByStatus(BookStatus bookStatus);
+
 }

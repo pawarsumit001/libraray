@@ -1,5 +1,9 @@
 package com.libraryManagement.service;
 
+
+import com.libraryManagement.dto.IssueBookDto;
+import com.libraryManagement.dto.StudentRequestBookDto;
+import com.libraryManagement.dto.ViewStudentDto;
 import com.libraryManagement.entity.Book;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +22,10 @@ public interface BookService {
 
     public Book updateBookById(Book book,int id);
 
-    List<Book> viewAllBookOnStatus();
+
+    Book viewAllBookOnStatus();
+
+    IssueBookDto issueBook();
+
+
 }

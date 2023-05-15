@@ -3,7 +3,9 @@ package com.libraryManagement.entity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.libraryManagement.enumeration.BookStatus;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -14,9 +16,10 @@ import java.util.List;
 @Entity
 @Data
 @Table(name="book_details")
-@ToString
-public class Book {
 
+@AllArgsConstructor
+@NoArgsConstructor
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,13 +32,17 @@ public class Book {
 
     @Column(name="issue_date")
     private Date issuedDate;
-   @Enumerated(value = EnumType.STRING)
+    @Column(name="return_date")
+    private Date returnDate;
+    @Enumerated(value = EnumType.STRING)
     @Column(name = "Book_status")
     private BookStatus status ;
     @JsonManagedReference
-   @OneToMany(fetch=FetchType.EAGER , cascade = CascadeType.ALL )
-    @JoinColumn(name = "s_id" )
-   private List<Student> student= new ArrayList<>();
+
+    @OneToMany(fetch=FetchType.EAGER , cascade = CascadeType.ALL ,mappedBy = "book")
+   // @JoinColumn(name = "s_id" )
+    private List<Student> student= new ArrayList<>();
+
 
 
 }

@@ -1,5 +1,6 @@
 package com.libraryManagement.service;
 
+import com.libraryManagement.dto.ViewStudentDto;
 import com.libraryManagement.entity.Student;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +18,6 @@ public interface StudentService {
     public void deleteStudentById(int id);
 
     public Student updateStudentById(Student student ,int id);
+
 
 }
